@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="ISO-8859-1">
+    <title>Therapist Jen</title>
+    <script
+            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script src="chatInterface.js"></script>
+
+
+    <link rel="stylesheet" href="appStyle.css">
+</head>
+<body>
+
+<div id="header">
+    <img src="TherapistJen.JPG" class="center"></img>
+</div>
+<iframe id="messageHistory" src="chatInterface.html" name="messageHistory"></iframe>
+<div id="controls">
+    <textarea></textarea>
+    <button id="SendButton">Send</button>
+</div>
+
+<script>
+    $(document).ready(function () {
+        $("button").click(sendMessage);
+    });
+
+
+    function sendMessage() {
+        var typedText = $("textarea").val();
+        if (typedText != "") {
+            window.messageHistory.addUserMessage(typedText);
+            $("textarea").val("");
+        }
+
+    }
+</script>
+</body>
+</html>
