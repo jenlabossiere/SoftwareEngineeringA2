@@ -1,11 +1,5 @@
-import cherrypy
-
-
 
 import cherrypy
-import os.path
-
-
 
 class Root(object):
     @cherrypy.expose
