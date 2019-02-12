@@ -1,31 +1,4 @@
 /*chatInterface.js creates the interface where all messages are displayed*/
-
-//The messages that will be displayed
-var messages = [{
-    isBot: true,
-    message: "Welcome"
-}, {
-    isBot: true,
-    message: "How can I help you?"
-}
-];
-
-// RGB numbers for the label of the person talking to the bot
-var personNameColorR = 0;
-var personNameColorG = 0;
-var personNameColorB = 255;
-
-// RGB numbers for the label of the bot
-var botNameColorR = 255;
-var botNameColorG = 0;
-var botNameColorB = 0;
-
-//Text properties
-var txtSize = 24;
-var spaceBetweenLines = 25;
-var hPadding = 10; // horizontal padding for message
-var vPadding = 10; // vertical padding for messages
-
 var canvasHeight = 0;
 
 function setup() {

@@ -5,7 +5,7 @@
     <title>Therapist Jen</title>
     <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="chatInterface.js"></script>
+    <script src="messageHistory/chatInterface.js"></script>
 
 
     <link rel="stylesheet" href="appStyle.css">
@@ -15,7 +15,7 @@
 <div id="header">
     <img src="TherapistJen.JPG" class="center"></img>
 </div>
-<iframe id="messageHistory" src="chatInterface.html" name="messageHistory"></iframe>
+<iframe id="messageHistory" src="messageHistory/chatInterface.html" name="messageHistory"></iframe>
 <div id="controls">
     <textarea></textarea>
     <button id="SendButton">Send</button>
@@ -33,7 +33,6 @@
             window.messageHistory.addUserMessage(typedText);
             $("textarea").val("");
         }
-
     }
 </script>
 </body>
