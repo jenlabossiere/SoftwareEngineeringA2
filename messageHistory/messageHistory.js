@@ -71,6 +71,10 @@ function printMessage(isBot, message, y) {
     return getTextHeight(message);
 }
 
+function printTherapistJenIsTyping(y) {
+
+}
+
 function updateCanvas(newHeight) {
     if (newHeight > canvasHeight) {
         canvasHeight = newHeight;
@@ -79,6 +83,8 @@ function updateCanvas(newHeight) {
 
 }
 
+/*Returns the height of the block of text passed. If the text is long, the text could span more than 1 line,
+ and this function takes care of that*/
 function getTextHeight(txt) {
     textHeight = getLineHeight();
     // Split the text by spaces
