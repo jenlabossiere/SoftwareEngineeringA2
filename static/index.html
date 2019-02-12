@@ -5,17 +5,16 @@
     <title>Therapist Jen</title>
     <script
             src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="messageHistory/chatInterface.js"></script>
 
 
-    <link rel="stylesheet" href="appStyle.css">
+    <link rel="stylesheet" href="static/appStyle.css">
 </head>
 <body>
 
 <div id="header">
-    <img src="TherapistJen.JPG" class="center"></img>
+    <img src="static/TherapistJen.JPG" class="center"></img>
 </div>
-<iframe id="messageHistory" src="messageHistory/chatInterface.html" name="messageHistory"></iframe>
+<iframe id="messageHistory" src="static/messageHistory/messageHistory.html" name="messageHistory"></iframe>
 <div id="controls">
     <textarea></textarea>
     <button id="SendButton">Send</button>
@@ -31,6 +30,9 @@
         var typedText = $("textarea").val();
         if (typedText != "") {
             window.messageHistory.addUserMessage(typedText);
+            $.post("http://127.0.0.1:8080", typedText, function(data){
+                addBotMessage(data)
+            });
             $("textarea").val("");
         }
     }
