@@ -12,5 +12,11 @@ def negativeThoughtsOrGoals(userMessage):
     except AttributeError:
         return "normal"
 
+def questionOrStatement(userMessage):
+    responceAsRegex = re.search("\?", userMessage)
 
-print(negativeThoughtsOrGoals("end the conver9sation"))
+    isQuestion = bool(responceAsRegex)
+    if isQuestion:
+        return "question"
+    else :
+        return "statement"
