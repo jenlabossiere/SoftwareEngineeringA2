@@ -6,6 +6,7 @@ alone -> 2
 struggling -> 1
 depression -> 2
 hopeless -> 5
+sad -> 3
 anxiety -> 1
 cry -> 1
 angry -> 2
@@ -14,7 +15,11 @@ died -> 3
 dull -> 1
 lifeless -> 1
 failed -> 1
+suicidal -> 2
 suicide -> 2
+negative -> 5
+Negative -> 2
 Disappointed -> 1
 fail -> 1
 kill -> 6
+suck -> 1

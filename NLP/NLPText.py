@@ -1,10 +1,11 @@
+import spacy as spacy
 from spacy.lang.en import English
 from spacy.matcher import Matcher
-
+spacy.load('en_core_web_sm')
 nlp = English()
 matcher = Matcher(nlp.vocab)
 doc = nlp('')
-inputSentence = input("Enter sentence, or type '=' to enter file name instead")
+inputSentence = input("Enter sentence, or type '=' to enter file name instead: ")
 if inputSentence != '=':
     doc = nlp(inputSentence);
 else:
@@ -13,7 +14,7 @@ else:
 
 
 keywords = []
-kdoc = nlp((open("Keywords.txt")).read())
+kdoc = nlp((open("keywords.txt")).read())
 for token in kdoc:
     keywords.append(str(token))
 
@@ -41,10 +42,12 @@ for match_id, start, end, in matches:
 outputFile = open("output.txt", "w")
 i = 1
 while i < len(output):
-    print(output[i], ": ", output2[i])
     outputStr = output[i] + " -> " + str(output2[i]) + '\n'
     outputFile.write(outputStr)
     i = i+1
+
+print("Done!")
+
 
 
 
