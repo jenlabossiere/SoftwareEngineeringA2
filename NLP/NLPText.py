@@ -13,7 +13,7 @@ else:
 
 
 keywords = []
-kdoc = nlp((open("keywords.txt")).read())
+kdoc = nlp((open("Keywords.txt")).read())
 for token in kdoc:
     keywords.append(str(token))
 
