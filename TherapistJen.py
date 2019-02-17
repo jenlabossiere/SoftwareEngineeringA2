@@ -16,13 +16,13 @@ class Root(object):
 
 
 if __name__ == '__main__':
-    config = {
-        '/': {
-            'tools.staticdir.on': True,
-            'tools.staticdir.dir': PATH,
-            'tools.staticdir.index': 'index.html',
-        },
-    }
-    cherrypy.quickstart(Root(), '/', config)
+   # config = {
+    #    '/': {
+     #       'tools.staticdir.on': True,
+     #       'tools.staticdir.dir': PATH,
+      #      'tools.staticdir.index': 'index.html',
+      #  },
+   # }
+    cherrypy.quickstart(Root(), '/')
 
 cherrypy.quickstart()
