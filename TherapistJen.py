@@ -18,11 +18,11 @@ class Root(object):
 
 # took out configuration because it seems to work without it
 if __name__ == '__main__':
-    # config = {
-    #    '/': {
-    #       'tools.staticdir.on': True,
-    #       'tools.staticdir.dir': PATH,
-    #      'tools.staticdir.index': 'index.html',
-    #  },
-    # }
-    cherrypy.quickstart(Root(), '/')# start up the server
+    config = {
+        '/': {
+            'tools.staticdir.on': True,
+            'tools.staticdir.dir': PATH,
+            'tools.staticdir.index': 'index.html',
+        },
+    }
+    cherrypy.quickstart(Root(), '/', config)  # start up the server
