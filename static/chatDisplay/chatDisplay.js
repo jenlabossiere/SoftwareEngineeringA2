@@ -1,4 +1,4 @@
-/*messageHistory.js creates the interface where all messages are displayed*/
+/*chatDisplay.js creates the interface where all messages are displayed*/
 var canvasHeight = 0;
 
 function setup() {
