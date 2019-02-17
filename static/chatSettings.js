@@ -1,6 +1,6 @@
 /*Settings of the chat interface*/
 
-//The messages that will be displayed
+//The messages that will be displayed. This variable is added to throughout the session
 var messages = [{
     isBot: true,
     message: "Welcome"
@@ -10,17 +10,17 @@ var messages = [{
 }
 ];
 
-// RGB numbers for the label of the person talking to the bot
+// RGB numbers for the label of the person talking to the bot in the chat display
 const personNameColorR = 0;
 const personNameColorG = 0;
 const personNameColorB = 255;
 
-// RGB numbers for the label of the bot
+// RGB numbers for the label of the bot in the chat display
 const botNameColorR = 255;
 const botNameColorG = 0;
 const botNameColorB = 0;
 
-//Text properties
+//Text properties in the chat display
 const txtSize = 24;
 const spaceBetweenLines = 25;
 const hPadding = 10; // horizontal padding for message

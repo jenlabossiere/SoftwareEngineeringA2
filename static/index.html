@@ -3,39 +3,49 @@
 <head>
     <meta charset="ISO-8859-1">
     <title>Therapist Jen</title>
-    <script
-            src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("button").click(sendMessage);//attach an event handler to send button
+        });
+    </script>
     <link rel="stylesheet" href="static/appStyle.css">
 </head>
 <body>
 
 <div id="header">
+    <!-- Therpist Jen Logo -->
     <img src="static/TherapistJen.JPG" class="center"></img>
 </div>
+<!-- Interface for displaying chat messages -->
 <iframe id="messageHistory" src="static/messageHistory/messageHistory.html" name="messageHistory"></iframe>
+<!-- The controls below the chat history -->
 <div id="controls">
     <textarea></textarea>
     <button id="SendButton">Send</button>
 </div>
 
 <script>
-    $(document).ready(function () {
-        $("button").click(sendMessage);
-    });
-
-
     function sendMessage() {
         var typedText = $("textarea").val();
         if (typedText != "") {
             window.messageHistory.addUserMessage(typedText);
-            $.post("http://127.0.0.1:8080", typedText, function(data){
-                addBotMessage(data)
+            $.ajax({
+                type: "POST", //type of HTTP request
+                url: "therapistJenResponce", //method in TherapistJen.py to invoke
+                dataType: "text", //type of data to return
+                contentType: 'text/plain', //type of data to send
+                error: function () { //invokes if request is not successful
+                    alert("error");
+                },
+                success: function (data) { //Invoked if request is successful
+                    window.messageHistory.addBotMessage(data)//Print the returned responce to chat history
+                }
             });
-            $("textarea").val("");
+
+            $("textarea").val("");//clear user input area
         }
-    }
+    };
 </script>
 </body>
 </html>
