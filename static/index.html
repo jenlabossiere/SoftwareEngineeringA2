@@ -26,9 +26,19 @@
         var typedText = $("textarea").val();
         if (typedText != "") {
             window.messageHistory.addUserMessage(typedText);
-            $.post("http://localhost:8080", typedText, function(data){
-                addBotMessage(data)
+           x = $.ajax({
+                type: "POST",
+                url: "therapistJenResponce",
+                dataType: "text",
+                contentType: 'text/plain',
+                error: function () {
+                    alert("error");
+                },
+                success: function (data) {
+                    window.messageHistory.addBotMessage(data)
+                }
             });
+
             $("textarea").val("");
         }
     };
