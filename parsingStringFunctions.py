@@ -2,7 +2,7 @@
 import re
 
 
-#Searchs the message for "negative thoughs" or "goals" ignoring case, and returns the first match it sees
+#Searchs the message for "negative thoughs" or "goals" ignoring case, and returns the first match it sees. If no match, it returns "normal"
 def negativeThoughtsOrGoals(userMessage):
     #convert the user message to lower case
     userMessage = userMessage.lower()

@@ -15,8 +15,6 @@ class Root(object):
     def therapistJenResponce(self):
         return "Therapist Jen is still at school getting her degree in Psychology"
 
-
-# took out configuration because it seems to work without it
 if __name__ == '__main__':
     config = {
         '/': {
