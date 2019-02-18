@@ -1,7 +1,14 @@
 import NLP_For_Training
 import tensorflow as tf
 import numpy as np
+
 import pyodbc
+import re
+
+server = "sql04.ok.ubc.ca"
+database = "db_jlabossi"
+username = "jlabossi"
+password = "23976160"
 
 def getResponse(sOrQ, feeling, subject, questionNum):
     if questionNum <= 5:
