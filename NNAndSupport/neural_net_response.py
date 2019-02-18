@@ -3,6 +3,7 @@ from tensorflow import keras
 import numpy as np
 import pyodbc
 import os
+import parsingStringFunctions
 
 server = "sql04.ok.ubc.ca"
 database = "db_jlabossi"
@@ -38,6 +39,18 @@ def getResponse( sOrQ,userInput, subject, questionNum):
         cursor = cnxn.cursor()
         if sOrQ == "question":
             cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'question\'')
+        elif subject == "normal" && questionNum == 7:
+            subject = parsingStringFunctions.negativeThoughtsOrGoals(userInput)
+            questionNum = 1
+            cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
+        elif subject == "goal" && questionNum == 6:
+            subject = parsingStringFunctions.negativeThoughtsOrGoals(userInput)
+            questionNum = 1
+            cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
+        elif subject == "negative" && questionNum == 6:
+            subject = parsingStringFunctions.negativeThoughtsOrGoals(userInput)
+            questionNum = 1
+            cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
         else:
             cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
         for row in cursor:
