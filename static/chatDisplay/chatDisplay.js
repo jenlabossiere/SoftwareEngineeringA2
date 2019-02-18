@@ -1,5 +1,6 @@
-/*chatDisplay.js creates the interface where all messages are displayed*/
+/*settings.js creates the interface where all messages are displayed*/
 var canvasHeight = 0;
+var messages = []
 
 function setup() {
     canvasHeight = windowHeight; // set canvasHeight equal to the window height

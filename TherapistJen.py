@@ -18,21 +18,23 @@ class Root(object):
     @cherrypy.expose
     @cherrypy.tools.allow(methods=('POST'))
     def therapistJenResponce(self, **data):
-        userInput = data.get("userInput")
         global sOrQ
         global feeling
         global subject
         global questionNum
 
         if questionNum != 1:
+            userInput = data.get("userInput")
+            print(userInput)
             feeling = JenDatabaseQueryTechnique.getFeeling(userInput)
         response = JenDatabaseQueryTechnique.getResponse(sOrQ, feeling, subject, questionNum)
         questionNum += 1
-        if subject == "normal" & questionNum == 7:
+        if subject == "normal" and questionNum == 7:
+
             questionNum = 1
-        if subject == "goals" & questionNum == 6:
+        if subject == "goals" and questionNum == 6:
             questionNum = 1
-        if subject == "negative thoughts" & questionNum == 6:
+        if subject == "negative thoughts" and questionNum == 6:
             questionNum = 1
         return response
 
