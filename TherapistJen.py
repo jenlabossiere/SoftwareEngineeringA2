@@ -1,5 +1,5 @@
 import os
-import databaseQueryTechnique
+import NNAndSupport.databaseQueryTechnique
 import cherrypy
 
 PATH = os.path.abspath(os.path.dirname(__file__))

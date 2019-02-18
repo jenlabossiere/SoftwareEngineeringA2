@@ -11,7 +11,7 @@ def main(toAnalyse):
 
 
     keywords = []
-    kdoc = nlp((open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\keywords.txt")).read())
+    kdoc = nlp((open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NNAndSupport\\keywords.txt")).read())
     for token in kdoc:
         keywords.append(str(token))
 

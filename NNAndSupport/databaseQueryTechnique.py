@@ -15,7 +15,7 @@ def getResponse( sOrQ,userInput, subject, questionNum):
 
 
     #open, and read the saved model
-    filename = os.path.join(fileDir, 'NN+Support\\saved_model.h5')
+    filename = os.path.join(fileDir, 'NNAndSupport\\saved_model.h5')
     model = keras.models.load_model(filename)
     input = []
     input.append(NLP_For_Training.main(userInput))
@@ -26,7 +26,7 @@ def getResponse( sOrQ,userInput, subject, questionNum):
 
     #find the catagory with the max probability
     resp_index = np.argmax(resp_prob)
-    filename = os.path.join(fileDir, 'NN+Support\\resp_keywords.txt')
+    filename = os.path.join(fileDir, 'NNAndSupport\\resp_keywords.txt')
     FeelingFile = open(filename,"r")
     feelings = FeelingFile.read()
     feelings = feelings.split()

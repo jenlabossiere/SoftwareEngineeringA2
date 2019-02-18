@@ -3,7 +3,7 @@ import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 #open the datafile
-file = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\Dataset+Feelings.txt", "r")
+file = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NNAndSupport\\Dataset+Feelings.txt", "r")
 
 
 Dataset = []
@@ -18,7 +18,7 @@ for line in file:
 file.close()
 
 #open and read response keyword doc into the resp_keywords list
-keywordDoc = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\resp_keywords.txt", "r")
+keywordDoc = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NNAndSupport\\resp_keywords.txt", "r")
 resp_keywords = []
 for line in keywordDoc:
 	line = line.split()
@@ -28,7 +28,7 @@ keywordDoc.close()
 
 #get the user flagged words and store in keywords
 keywords = []
-kdoc = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\keywords.txt","r")
+kdoc = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NNAndSupport\\keywords.txt","r")
 for line in kdoc:
 	line = line.split()
 	keywords.append(line)
@@ -100,11 +100,11 @@ for guess in predictions:
 	print()
 	i = i + 1
 model.summary()
-model.save("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\saved_model.h5")
+model.save("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NNAndSupport\\saved_model.h5")
 
 
 model_stored = model.to_json()
-model_file = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\saved_model.txt", "w")
+model_file = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NNAndSupport\\saved_model.txt", "w")
 model_file.write(model_stored)
 model_file.close()
 
