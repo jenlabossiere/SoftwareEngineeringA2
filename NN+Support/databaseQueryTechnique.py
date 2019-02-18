@@ -1,8 +1,8 @@
 import NLP_For_Training
-import tensorflow as tf
 from tensorflow import keras
 import numpy as np
 import pyodbc
+import os
 
 server = "sql04.ok.ubc.ca"
 database = "db_jlabossi"
@@ -11,9 +11,12 @@ password = "23976160"
 
 
 def getResponse( sOrQ,userInput, subject, questionNum):
+    fileDir = os.path.dirname(os.path.realpath('__file__'))
+
 
     #open, and read the saved model
-    model = keras.models.load_model("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\saved_model.h5")
+    filename = os.path.join(fileDir, 'NN+Support\\saved_model.h5')
+    model = keras.models.load_model(filename)
     input = []
     input.append(NLP_For_Training.main(userInput))
 
