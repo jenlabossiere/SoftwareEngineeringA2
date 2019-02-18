@@ -26,7 +26,8 @@ def getResponse( sOrQ,userInput, subject, questionNum):
 
     #find the catagory with the max probability
     resp_index = np.argmax(resp_prob)
-    FeelingFile = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\resp_keywords.txt","r")
+    filename = os.path.join(fileDir, 'NN+Support\\resp_keywords.txt')
+    FeelingFile = open(filename,"r")
     feelings = FeelingFile.read()
     feelings = feelings.split()
     feeling = feelings[resp_index]
