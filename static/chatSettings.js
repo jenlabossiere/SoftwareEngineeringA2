@@ -1,14 +1,7 @@
 /*Settings of the chat interface*/
 
 //The messages that will be displayed. This variable is added to throughout the session
-var messages = [{
-    isBot: true,
-    message: "Welcome"
-}, {
-    isBot: true,
-    message: "How can I help you?"
-}
-];
+var messages = [];
 
 // RGB numbers for the label of the person talking to the bot in the chat display
 const personNameColorR = 0;
