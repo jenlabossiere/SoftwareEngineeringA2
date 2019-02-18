@@ -38,6 +38,3 @@ def getResponse( sOrQ,userInput, subject, questionNum):
             cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
         for row in cursor:
             return row[0]
-
-
-print(getResponse(2, "I feel dull and alone, I wish I was dead", "normal", 2))
