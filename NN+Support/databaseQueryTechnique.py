@@ -27,6 +27,7 @@ def getResponse( sOrQ,userInput, subject, questionNum):
     feelings = FeelingFile.read()
     feelings = feelings.split()
     feeling = feelings[resp_index]
+    print(feeling)
 
 
     if questionNum <= 5:
@@ -39,4 +40,4 @@ def getResponse( sOrQ,userInput, subject, questionNum):
         for row in cursor:
             return row[0]
 
-print(getResponse(2, "I feel dull and alnoe, I wish I was dead", "normal", 2))
+print(getResponse(2, "I feel dull and alone, I wish I was dead", "normal", 2))
