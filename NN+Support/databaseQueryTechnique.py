@@ -30,15 +30,12 @@ def getResponse( sOrQ,userInput, subject, questionNum):
     feeling = feelings[resp_index]
 
 
-
-    cnxn = pyodbc.connect(driver='{SQL Server}', host=server, database=database, user=username, password=password)
-    cursor = cnxn.cursor()
-
-    if sOrQ == "question":
-        cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'question\'')
-    else:
-        cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
-    for row in cursor:
-        return row[0]
-
-
+    if questionNum <= 5:
+        cnxn = pyodbc.connect(driver='{SQL Server}', host=server, database=database, user=username, password=password)
+        cursor = cnxn.cursor()
+        if sOrQ == "question":
+            cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'question\'')
+        else:
+            cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
+        for row in cursor:
+            return row[0]
