@@ -7,4 +7,4 @@ Disclaimer: Therapist Jen is a tool meant to help encourage positive behaviour a
 
 Dependencies:
 
-re, numpy
+re, cherrypy, 
