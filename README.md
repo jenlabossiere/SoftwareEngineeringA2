@@ -7,4 +7,20 @@ Disclaimer: Therapist Jen is a tool meant to help encourage positive behaviour a
 
 Dependencies:
 
-re, cherrypy, 
+re, cherrypy, pyodbc, spacy, tensorflow, keras, numpy
+
+
+The program is divided into four sections:
+
+Web-based Platform Use - located in the "static" folder
+
+Natural Language Processing - located in the "NLP" folder
+
+Neural Network - based Machine Learning - locaed in the "NN+Support" folder
+
+SQL Database Queries - 
+
+
+
+
+
