@@ -91,12 +91,21 @@ model.fit(train_in, train_resp, epochs=100)
 test_loss, test_acc = model.evaluate(test_in, test_resp)
 print(test_acc)
 
+
+predictions = model.predict(test_in)
+i = 0
+for guess in predictions:
+	print(np.argmax(guess))
+	print(test_resp[i])
+	print()
+	i = i + 1
+model.summary()
+model.save("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\saved_model.h5")
+
+
 model_stored = model.to_json()
-
 model_file = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\saved_model.txt", "w")
-
 model_file.write(model_stored)
-
 model_file.close()
 
 #parse into user and response
