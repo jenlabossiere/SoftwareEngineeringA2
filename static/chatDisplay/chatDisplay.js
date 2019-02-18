@@ -72,13 +72,11 @@ function printMessage(isBot, message, y) {
     return getTextHeight(message);
 }
 
-function printTherapistJenIsTyping(y) {
 
-}
-
+//If the height of text goes ooff the screen, set canvas height to new text height plus some buffer
 function updateCanvas(newHeight) {
     if (newHeight > canvasHeight) {
-        canvasHeight = newHeight;
+        canvasHeight = newHeight + 40;
         resizeCanvas(windowWidth, canvasHeight);
     }
 

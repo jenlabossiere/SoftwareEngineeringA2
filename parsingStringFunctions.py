@@ -7,7 +7,7 @@ def negativeThoughtsOrGoals(userMessage):
     #convert the user message to lower case
     userMessage = userMessage.lower()
     #tries and find "goals", "negative thoughts, or "end the conversation" in the lower cased message
-    matchAsRegex = re.search("goals|negative thoughts|end the conversation", userMessage)
+    matchAsRegex = re.search("goal|negative|end the conversation", userMessage)
     #if there is a match, return that match else return "normal"
     try:
         responce = matchAsRegex.group(0)

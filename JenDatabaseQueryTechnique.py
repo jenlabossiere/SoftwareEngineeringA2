@@ -18,7 +18,7 @@ feelingType = {
 
 
 def getResponse(sOrQ, feeling, subject, questionNum):
-    if questionNum <= 5:
+    if questionNum <= 30:
         cnxn = pyodbc.connect(driver='{SQL Server}', host=server, database=database, user=username, password=password)
         cursor = cnxn.cursor()
         if sOrQ == "question":
