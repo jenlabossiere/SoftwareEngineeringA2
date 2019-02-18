@@ -5,8 +5,19 @@ Therapist Jen is here as a companion to help you work through negative feelings 
 
 Disclaimer: TherapistJen is a tool meant to help encourage positive behaviour and is designed to work alongside other methods such as professional therapy.
 
-#Dependencies:
 
+#Compiling and Running TherapistJen
+
+To compile and run TherapistJen, one must first be either on the UBC Okanagan campus and connected to an official UBC network, or connected to myvpn.ok.ubc.ca. This will allow TherapistJen to access her database or responses. 
+
+When running TherapistJen, first run the "TherapistJen.py" file and then follow the hyperlink address that is generated in the terminal. This will bring you to TherapistJens's chatroom.
+
+Proceed to use TherapistJen to aid you in the maintenence of your mental health.
+
+
+
+
+#Dependencies:
 re, cherrypy, pyodbc, spacy, tensorflow, keras, numpy
 
 #Components:
@@ -33,6 +44,8 @@ JenDatabaseQueryTechniques.getResponse(sOrQ, feeling, subject, questionNum) - us
 JenDatabaseQueryTechniques.searchStringFor(userMessage, synonym) - searches userMessage for synonym and returns true if the synonym is contained within userMessage. Return false otherwise.
 
 JenDatabaseQueryTechniques.getFeeling(userMessage) - associates userMessage with a catagory of feeling. Returns string.
+
+neural_net_response.getResponse(sOrQ,userInput, subject, questionNum) - uses input to query the SQL database for the appropriate response using the neural net
 
 
 
