@@ -1,5 +1,5 @@
 import os
-import dataBaseQueryTechnique
+import databaseQueryTechnique
 import cherrypy
 
 PATH = os.path.abspath(os.path.dirname(__file__))
@@ -23,9 +23,8 @@ class Root(object):
         global questionNum
 
         if questionNum != 1:
-            feeling = databaseQueryTechnique.getFeeling(self)
-            databaseQueryTechnique.getResponse(sOrQ, feeling, subject, questionNum)
-        response = databaseQueryTechnique.getResponse(sOrQ, feeling, subject, questionNum)
+            databaseQueryTechnique.getResponse(sOrQ, self, subject, questionNum)
+        response = databaseQueryTechnique.getResponse(sOrQ, self, subject, questionNum)
         return response
 
 
