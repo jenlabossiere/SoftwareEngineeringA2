@@ -1,5 +1,5 @@
 import os
-import NNAndSupport.databaseQueryTechnique
+import JenDatabaseQueryTechnique
 import cherrypy
 
 PATH = os.path.abspath(os.path.dirname(__file__))
@@ -25,9 +25,15 @@ class Root(object):
         global questionNum
 
         if questionNum != 1:
-            feeling = databaseQueryTechnique.getFeeling(userInput)
-        response = databaseQueryTechnique.getResponse(sOrQ, feeling, subject, questionNum)
+            feeling = JenDatabaseQueryTechnique.getFeeling(userInput)
+        response = JenDatabaseQueryTechnique.getResponse(sOrQ, feeling, subject, questionNum)
         questionNum += 1
+        if subject == "normal" & questionNum == 7:
+            questionNum = 1
+        if subject == "goals" & questionNum == 6:
+            questionNum = 1
+        if subject == "negative thoughts" & questionNum == 6:
+            questionNum = 1
         return response
 
 
