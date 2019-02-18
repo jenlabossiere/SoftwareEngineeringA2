@@ -16,16 +16,18 @@ class Root(object):
 
     # Method that is invoked on a post request. The .ajax in index.html points to this method
     @cherrypy.expose
-    def therapistJenResponce(self):
+    @cherrypy.tools.allow(methods=('POST'))
+    def therapistJenResponce(self, **data):
+        userInput = data.get("userInput")
         global sOrQ
         global feeling
         global subject
         global questionNum
 
         if questionNum != 1:
-            feeling = databaseQueryTechnique.getFeeling(self)
-            databaseQueryTechnique.getResponse(sOrQ, feeling, subject, questionNum)
+            feeling = databaseQueryTechnique.getFeeling(userInput)
         response = databaseQueryTechnique.getResponse(sOrQ, feeling, subject, questionNum)
+        questionNum += 1
         return response
 
 
