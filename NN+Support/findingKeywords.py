@@ -85,14 +85,19 @@ model.compile(
 )
 
 #train the model and do it 8 times
-model.fit(train_in, train_resp, epochs=8)
+model.fit(train_in, train_resp, epochs=100)
 
 #find how accurate the model is
 test_loss, test_acc = model.evaluate(test_in, test_resp)
 print(test_acc)
 
+model_stored = model.to_json()
 
+model_file = open("C:\\Users\\Spencer\\Documents\\Programming\\Python\\310-Software-Engineering\\310-Software-Engineering\\NN+Support\\saved_model.txt", "w")
 
+model_file.write(model_stored)
+
+model_file.close()
 
 #parse into user and response
 #match responses
