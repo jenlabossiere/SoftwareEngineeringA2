@@ -2,6 +2,8 @@ import os
 import JenDatabaseQueryTechnique
 import cherrypy
 import parsingStringFunctions
+import threading
+import socket
 
 PATH = os.path.abspath(os.path.dirname(__file__))
 
@@ -11,6 +13,24 @@ subject = "normal"
 questionNum = 1
 socketMessages = []
 
+def sendData(data, IP, server):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((IP, server))
+        s.sendall(data.encode())
+        s.close()
+
+def receiveData(IP, server):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind((IP, server))
+        s.listen(5)
+        while True:
+            c, addr = s.accept()
+            dataTaken = c.recv(1024).decode()
+            c.close()
+            socketMessages.append(dataTaken)
+
+threading.Thread(target=receiveData, args=('206.87.3.89', 65432)).start()
+
 class Root(object):
     @cherrypy.expose
     def index(self):
@@ -19,6 +39,12 @@ class Root(object):
     # Method that is invoked on a post request. The .ajax in index.html points to this method
     @cherrypy.expose
     @cherrypy.tools.allow(methods=('POST'))
+    def listenSocketMessages(self):
+        if len(socketMessages) != 0:
+            return socketMessages.pop()
+        else:
+            return None
+ 
     def therapistJenResponce(self, **data):
         #declare theses as global variables. I would think there is another way to do this
         global sOrQ

@@ -8,6 +8,7 @@
         $(document).ready(function () {
             setup()
             $("button").click(sendMessage);//attach an event handler to send button
+            listenSocketMessages();
         });
     </script>
     <link rel="stylesheet" href="static/appStyle.css">
@@ -60,6 +61,20 @@
                     window.messageHistory.addBotMessage(data)//Print the returned responce to chat history
                 }
             });
+    }
+
+    function listenSocketMessages() {
+        $.ajax({
+            type: "POST",
+            url: "listenSocketMessages",
+            success: function (data) {
+                if (data != "")
+                    window.messageHistory.addBotMessage(data)
+                setTimeout(function () {
+                    listenSocketMessages();
+                }, 0);
+            }        
+        });
     }
 </script>
 </body>
