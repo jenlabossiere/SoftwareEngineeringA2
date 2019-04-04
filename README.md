@@ -50,7 +50,7 @@ neural_net_response.getResponse(sOrQ,userInput, subject, questionNum) - uses inp
 #Changes via Jen Labossiere: 
 
 *dependencies*
-re, cherrypy, pyodbc, spacy, tensorflow, keras, numpy, nltk
+nltk
 
 
 
