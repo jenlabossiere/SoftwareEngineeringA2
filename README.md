@@ -47,6 +47,11 @@ JenDatabaseQueryTechniques.getFeeling(userMessage) - associates userMessage with
 
 neural_net_response.getResponse(sOrQ,userInput, subject, questionNum) - uses input to query the SQL database for the appropriate response using the neural net
 
+#Changes via Jen Labossiere: 
+
+*dependencies*
+re, cherrypy, pyodbc, spacy, tensorflow, keras, numpy, nltk
+
 
 
 
