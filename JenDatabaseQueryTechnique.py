@@ -1,5 +1,7 @@
 import pyodbc
+import quoteWords
 import re
+import sys
 
 server = "sql04.ok.ubc.ca"
 database = "db_jlabossi"
@@ -7,6 +9,7 @@ username = "jlabossi"
 password = "23976160"
 
 feelingType = {
+
         "overwhelmed": ["overwhelm", "grieve", "damage", "overwrought", "concern", "alarm", "astonish", "baffle"],
         "sad" : ["sad", "bitter", "dismal", "heartbroken", "mournful", "somber", "sorry", "wistful", "despair", "distress", "down", "hurt", "glum", "gloomy", "grieve", "heartsick", "heavyheart", "morbid", "forlorn"],
         "angry" : ["angry","annoyed", "bitter", "enraged", "exasperated", "furious", "heated", "indignant", "offend", "resent", "sullen", "uptight", "irritate", "irratable", "mad", "fuming", "huffy", "infuriate", "raging", "rage", "sulky", "sore", "incense"],
@@ -19,7 +22,8 @@ feelingType = {
 
 def getResponse(sOrQ, feeling, subject, questionNum):
     if questionNum <= 30:
-        cnxn = pyodbc.connect(driver='{SQL Server}', host=server, database=database, user=username, password=password)
+        dbstring = ('{ODBC Driver 17 for SQL Server}', '{SQL Server}') [sys.platform == 'win32']
+        cnxn = pyodbc.connect(driver=dbstring, host=server, database=database, user=username, password=password)
         cursor = cnxn.cursor()
         if sOrQ == "question":
             cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'question\'')

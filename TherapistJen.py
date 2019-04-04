@@ -9,6 +9,7 @@ sOrQ = "statement"
 feeling = "nothing"
 subject = "normal"
 questionNum = 1
+socketMessages = []
 
 class Root(object):
     @cherrypy.expose
