@@ -24,7 +24,7 @@
 <!-- The controls below the chat history -->
 <div id="controls">
     <textarea></textarea>
-    <button id="SendButton">Send</button>
+    <button id="SendButton">Respond</button>
 </div>
 
 <script>
@@ -68,7 +68,7 @@
             type: "POST",
             url: "listenSocketMessages",
             success: function (data) {
-                if (data != "")
+                if (data != "")ozz
                     window.messageHistory.addBotMessage(data)
                 setTimeout(function () {
                     listenSocketMessages();

@@ -6,7 +6,7 @@ html, body {
 	width: 100%;
 	display: flex;
 	flex-direction: column;
-	background-color: #4a2e7c;
+	background-color: #50335e;
 	overflow-x: hidden;
 	align-items: center;
 	justify-content: center;
@@ -42,7 +42,7 @@ textarea {
 	width: 90%;
 	height: 80%;
 	font-size: 24px;
-	font-family: Calibri;
+	font-family: Helvetica;
 	resize: none;
 	border-radius: 20px;
 }
@@ -54,7 +54,7 @@ button {
 	resize: none;
 	border-radius: 20px;
 	margin-left: 10px;
-	background: #926ea7;
+	background: #68577c;
 	color: white;
 }
 

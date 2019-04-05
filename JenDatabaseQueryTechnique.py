@@ -1,5 +1,4 @@
 import pyodbc
-import quoteWords
 import re
 import sys
 
