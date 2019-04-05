@@ -42,7 +42,7 @@ textarea {
 	width: 90%;
 	height: 80%;
 	font-size: 24px;
-	font-family: Helvetica;
+	font-family: Calibri;
 	resize: none;
 	border-radius: 20px;
 }
@@ -54,7 +54,7 @@ button {
 	resize: none;
 	border-radius: 20px;
 	margin-left: 10px;
-	background: #42f471;
+	background: #926ea7;
 	color: white;
 }
 

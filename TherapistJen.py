@@ -57,7 +57,7 @@ class Root(object):
         if questionNum != 1 or subject != "normal":
             userInput = data.get("userInput")
             try:
-                sendData(userInput, '142.329.81.167', 65432)
+                sendData(userInput, '127.0.0.1', 65432)
             except:
                 print("Connection does not work.")
             isQuestion = parsingStringFunctions.questionOrStatement(userInput)
