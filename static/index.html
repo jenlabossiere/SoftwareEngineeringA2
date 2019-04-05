@@ -23,11 +23,22 @@
 <iframe id="messageHistory" src="static/chatDisplay/chatDisplay.html" name="messageHistory"></iframe>
 <!-- The controls below the chat history -->
 <div id="controls">
-    <textarea></textarea>
-    <button id="SendButton" onclick="sendMessage();">Respond</button>
+    <textarea id="textArea"></textarea>
+    <button id="SendButton">Respond</button>
 </div>
 
+
+
 <script>
+    function enterKey() {
+        var typedText = $("textarea").val();
+        if (typedText != "") {
+            if (event.keyCode === 13) {
+                $("#SendButton").click();
+            }
+        }
+    }
+    $("textarea").keyup(enterKey);
     function sendMessage() {
         console.log('ahhhhh')
         var typedText = $("textarea").val();
@@ -69,7 +80,7 @@
             type: "POST",
             url: "listenSocketMessages",
             success: function (data) {
-                if (data != "")ozz
+                if (data != "")
                     window.messageHistory.addBotMessage(data)
                 setTimeout(function () {
                     listenSocketMessages();
@@ -77,6 +88,8 @@
             }        
         });
     }
+
+
 </script>
 </body>
 </html>
