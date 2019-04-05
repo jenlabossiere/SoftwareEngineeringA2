@@ -45,6 +45,8 @@ class Root(object):
         else:
             return None
  
+    @cherrypy.expose
+    @cherrypy.tools.allow(methods=('POST'))
     def therapistJenResponce(self, **data):
         #declare theses as global variables. I would think there is another way to do this
         global sOrQ
@@ -54,6 +56,10 @@ class Root(object):
         #if this isnt the first message, check if the user asked a question
         if questionNum != 1 or subject != "normal":
             userInput = data.get("userInput")
+            try:
+                sendData(userInput, '142.329.81.167', 65432)
+            except:
+                print("Connection does not work.")
             isQuestion = parsingStringFunctions.questionOrStatement(userInput)
             #if the user asked a question, reset
             if(isQuestion == "question"):
