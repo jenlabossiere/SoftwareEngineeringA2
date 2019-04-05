@@ -7,7 +7,7 @@ Disclaimer: TherapistJen is a tool meant to help encourage positive behaviour an
 *Please note that changes made by me (Jen Labossiere) will be italisized.*
 
 
-###### Compiling and Running TherapistJen
+### Compiling and Running TherapistJen
 To compile and run TherapistJen, one must first be either on the UBC Okanagan campus and connected to an official UBC network, or connected to myvpn.ok.ubc.ca. This will allow TherapistJen to access her database or responses. 
 
 When running TherapistJen, first run the "TherapistJen.py" file and then follow the hyperlink address that is generated in the terminal. This will bring you to TherapistJens's chatroom.
@@ -15,7 +15,7 @@ When running TherapistJen, first run the "TherapistJen.py" file and then follow 
 Proceed to use TherapistJen to aid you in the maintenence of your mental health.
 
 
-###### Dependencies:
+### Dependencies:
 - re 
 - cherrypy 
 - pyodbc 
@@ -26,7 +26,7 @@ Proceed to use TherapistJen to aid you in the maintenence of your mental health.
 - *nltk*
 
 
-###### Components:
+### Components:
 The functionality of the program is divided into four sections:
 - Web-based Platform Use - located in the "static" folder
 - Natural Language Processing - *located in the findSynonyms.py file, this is used to get more synonyms the user can say to match with our keywords*
@@ -34,7 +34,7 @@ The functionality of the program is divided into four sections:
 - SQL Database Queries - located in the "JenDatabaseQueryTechniques.py" file, this is used to access the database of responses that TherapistJen has available.
 
 
-###### Classes:
+### Classes:
 - parsingStringFunction.negativeThoughtsOrGoals(userMessage) - returns 'negative' or 'goals' as the user responds to TherapistJen.
 - parsingStringFunction.questionOrStatement(userMessage) - determines if the userMessage is a question or a statement and returns 'question' or 'statement'.
 - NLP_For_Training.main(userInput) - analyses the userInput and returns a matrix counting the presneces of each flagged word. Formatted for use as input for the Neural Network.
@@ -44,7 +44,7 @@ The functionality of the program is divided into four sections:
 
 # Changes via Jen Labossiere: 
 
-- OpenNLP use: nltk was used, as well as wordnet from nltk. To have this run effieciently, I pre-processed by running a python code and appending all new synonyms in a text file. Instead of the part of the code in JenDatabaseQueryTechnique where synonyms are mapped to a keyword, and then used to query the database, I've copied and pasted the output (a VERY long list of more synonyms) to the code. If it didn't take two hours to run,I would have kept the code to run it with the program. (10 marks)
+- OpenNLP use: nltk was used, as well as wordnet from nltk. To have this run effieciently, I pre-processed by running a python code and appending all new synonyms in a text file. Instead of the part of the code in JenDatabaseQueryTechnique where synonyms are mapped to a keyword, and then used to query the database, I've copied and pasted the output (a VERY long list of more synonyms) to the code. If it didn't take two hours to run, I would have kept the code in to run it with the program. (10 marks)
 
 - GUI colours changed for a better aesthetic, including the "send" button being changed to "respond". As well as this, when enter is clicked on the keyboard, the message is sent, whereas before the button "send" had to be physically pressed--allows for an easier user experience. (5 marks)
 
