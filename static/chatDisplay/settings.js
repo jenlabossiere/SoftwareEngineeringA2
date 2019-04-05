@@ -6,9 +6,9 @@ const personNameColorG = 0;
 const personNameColorB = 255;
 
 // RGB numbers for the label of the bot in the chat display
-const botNameColorR = 255;
-const botNameColorG = 0;
-const botNameColorB = 0;
+const botNameColorR = 104;
+const botNameColorG = 87;
+const botNameColorB = 124;
 
 //Text properties in the chat display
 const txtSize = 24;
