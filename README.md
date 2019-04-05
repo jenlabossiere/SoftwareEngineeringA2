@@ -53,15 +53,15 @@ neural_net_response.getResponse(sOrQ,userInput, subject, questionNum) - uses inp
 nltk
 
 #changes:
-    - OpenNLP use: nltk was used, as well as wordnet from nltk. To have this run effieciently, I pre-processed by running a python code and appending all new synonyms in a text file. Instead of the part of the code in JenDatabaseQueryTechnique where synonyms are mapped to a keyword, and then used to query the database, I've copied and pasted the output (a VERY long list of more synonyms) to the code. If it didn't take two hours to run,I would have kept the code to run it with the program. (10 marks)
+    OpenNLP use: nltk was used, as well as wordnet from nltk. To have this run effieciently, I pre-processed by running a python code and appending all new synonyms in a text file. Instead of the part of the code in JenDatabaseQueryTechnique where synonyms are mapped to a keyword, and then used to query the database, I've copied and pasted the output (a VERY long list of more synonyms) to the code. If it didn't take two hours to run,I would have kept the code to run it with the program. (10 marks)
 
-    - GUI colours changed for a better aesthetic, including the "send" button being changed to "respond". As well as this, when enter is clicked on the keyboard, the message is sent, whereas before the button "send" had to be physically pressed--allows for an easier user experience. (5 marks)
+    GUI colours changed for a better aesthetic, including the "send" button being changed to "respond". As well as this, when enter is clicked on the keyboard, the message is sent, whereas before the button "send" had to be physically pressed--allows for an easier user experience. (5 marks)
 
-    - Code is included to use for sockets, which works when not connected to the UBC server. This has been implemented with another group member. (15 marks)
+    Code is included to use for sockets, which works when not connected to the UBC server. This has been implemented with another group member. (15 marks)
 
-    - Database has been extended to allow for a different topic (2 marks)
+    Database has been extended to allow for a different topic (2 marks)
 
-    - If the topic is changed, or a question is asked of the Therapist, then measures are taken to put the conversation back on track. (3 marks)
+    If the topic is changed, or a question is asked of the Therapist, then measures are taken to put the conversation back on track. (3 marks)
 
 
 
