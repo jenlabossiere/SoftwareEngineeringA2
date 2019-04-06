@@ -44,8 +44,10 @@ The functionality of the program is divided into four sections:
 
 # Changes via Jen Labossiere: 
 
-- OpenNLP use: nltk was used, as well as wordnet from nltk. To have this run effieciently, I pre-processed by running a python code and appending all new synonyms in a text file. Instead of the part of the code in JenDatabaseQueryTechnique where synonyms are mapped to a keyword, and then used to query the database, I've copied and pasted the output (a VERY long list of more synonyms) to the code. If it didn't take two hours to run, I would have kept the code in to run it with the program. (10 marks)
+- OpenNLP use: nltk was used, as well as wordnet from nltk. To have this run effieciently, I pre-processed by running a python code and appending all new synonyms in a text file. Instead of the part of the code in JenDatabaseQueryTechnique where synonyms are mapped to a keyword, and then used to query the database, I've copied and pasted the output (a VERY long list of more synonyms) to the code. If it didn't take two hours to run, I would have kept the code in to run it with the program. This allows for the bot to have a conversation with better flow. (10 marks)
 
 - GUI colours changed for a better aesthetic, including the "send" button being changed to "respond". As well as this, when enter is clicked on the keyboard, the message is sent, whereas before the button "send" had to be physically pressed--allows for an easier user experience. (5 marks)
 
-- Code is included to use for sockets, which works when not connected to the UBC server. This has been implemented with another group member, Ethan Godden. Unfortunately due to the firewall with UBCO's VPN, we couldn't make a video for the submission tonight, but we are more than happy to show our work if we need to! (15 marks)
+- Code is included to use for sockets, which works when not connected to the UBC server. This has been implemented with another group member, Ethan Godden. Unfortunately due to the firewall with UBCO's VPN, we couldn't make a video for the submission tonight, but we are more than happy to show our work if we need to! All code for this is in TherapistJen.py (15 marks)
+
+- The bot itself can't handle a question, so if the user enters a question mark anywhere in the input, the bot responds to the user to rephrase the question as a statement, and is redirected back to the first question such that user can start over. This improved the bot since, if a question was asked, the bot would not be able to respond directly, hence the conversation can continue. (some marks)

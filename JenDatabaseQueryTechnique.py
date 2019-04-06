@@ -2,10 +2,10 @@ import pyodbc
 import re
 import sys
 
-server = "getrekt.database.windows.net"
+server = "sql04.ok.ubc.ca"
 database = "db_jlabossi"
-username = "lindstorm"
-password = "COSC310sucks"
+username = "jlabossi"
+password = "23976160"
 
 feelingType = {
 
@@ -25,9 +25,9 @@ def getResponse(sOrQ, feeling, subject, questionNum):
         cnxn = pyodbc.connect(driver=dbstring, host=server, database=database, user=username, password=password)
         cursor = cnxn.cursor()
         if sOrQ == "question":
-            cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'question\'')
+            cursor.execute('SELECT response FROM ChatBot2 WHERE sOrQ = \'question\'')
         else:
-            cursor.execute('SELECT response FROM ChatBot WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
+            cursor.execute('SELECT response FROM ChatBot2 WHERE sOrQ = \'statement\' AND questionNum = \'' + str(questionNum) + '\'AND feeling = \'' + feeling + '\' AND subject = \'' + subject + '\'')
         for row in cursor:
             return row[0]
 
