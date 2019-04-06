@@ -2,13 +2,13 @@ import pyodbc
 import re
 import sys
 
-server = "sql04.ok.ubc.ca"
+server = "getrekt.database.windows.net"
 database = "db_jlabossi"
-username = "jlabossi"
-password = "23976160"
+username = "lindstorm"
+password = "COSC310sucks"
 
 feelingType = {
-    
+
         "overwhelmed": ["overwhelm", "submerge", "overpower", "grieve", "change", "detriment", "damage", "distortion", "run", "battle damage", "operational damage", "casualty", "change of integrity", "impairment", "defacement", "wound", "burn", "defloration", "cost", "price", "asking price", "bid price", "closing price", "factory price", "highway robbery", "purchase price", "spot price", "support level", "valuation", "wrong", "injury", "concern", "worldly concern", "matter", "personal business", "part", "point of honor", "interest", "anxiety", "solicitude", "softheartedness", "sympathy", "negative stimulus", "bugaboo", "burden", "business", "enterprise", "agency", "brokerage", "carrier", "chain", "firm", "franchise", "manufacturer", "partnership", "processor", "shipbuilder", "underperformer", "refer", "fear", "alarm", "automobile horn", "burglar alarm", "device", "fire alarm", "horn", "siren", "torpedo", "signal", "air alert", "foghorn", "red flag", "tocsin", "alarm clock", "clock", "dismay", "amaze", "baffle", "diffuser", "plate", "perplex", "thwart"],
         "sad" : ["sad", "bitter", "dismal", "heartbroken", "mournful", "somber", "sorry", "wistful", "despair", "distress", "down", "hurt", "glum", "gloomy", "grieve", "heartsick", "heavyheart", "morbid", "forlorn", "ale", "bitter", "taste", "taste property", "bitterness", "acerbity", "acridity", "condition", "despair", "feeling", "hopelessness", "resignation", "discouragement", "pessimism", "pain", "distress", "anguish", "self-torture", "tsoris", "wound", "adversity", "pressure", "throe", "seizure", "straiten", "feather", "down", "duck down", "goose down", "swan", "plumule", "turn", "doctor", "highland", "hair", "lanugo", "toss off", "devour", "polish", "ill health", "brain damage", "injury", "birth trauma", "blast trauma", "bleeding", "blunt trauma", "bruise", "bump", "burn", "dislocation", "electric shock", "fracture", "frostbite", "intravasation", "penetrating trauma", "pinch", "rupture", "sting", "strain", "whiplash", "wale", "wound", "wrench", "pain", "distress", "anguish", "self-torture", "tsoris", "suffering", "agony", "throes", "discomfort", "detriment", "expense", "damage", "change of integrity", "impairment", "defacement", "defloration", "ache", "hurt", "suffer", "grieve" ],
         "angry" : ["angry","annoyed", "bitter", "enraged", "exasperated", "furious", "heated", "indignant", "offend", "resent", "sullen", "uptight", "irritate", "irratable", "mad", "fuming", "huffy", "infuriate", "raging", "rage", "sulky", "sore", "incense", "annoy", "ale", "bitter", "taste", "taste property", "bitterness", "acerbity", "acridity", "enrage", "exacerbate", "infuriate", "worsen", "heat", "inflame", "pique", "transgress", "shock", "hurt", "resent", "begrudge", "annoy", "irritate", "fume", "fumigate", "reek", "infuriate", "ramp", "rage", "torment", "annoy", "rag", "tease", "call on the carpet", "anger", "wrath", "fury", "lividity", "rage", "desire", "violence", "fashion", "fad", "ramp", "horse-drawn vehicle", "sulky", "infection", "sore", "blain", "chancre", "fester", "gall", "compound", "incense", "joss stick", "aroma", "cense", "infuriate", "container", "empty", "vacate", "evacuate"],

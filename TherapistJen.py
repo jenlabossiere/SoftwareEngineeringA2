@@ -5,6 +5,7 @@ import parsingStringFunctions
 import threading
 import socket
 
+
 PATH = os.path.abspath(os.path.dirname(__file__))
 
 sOrQ = "statement"
@@ -24,12 +25,12 @@ def receiveData(IP, server):
         s.bind((IP, server))
         s.listen(5)
         while True:
-            c, addr = s.accept()
+            c,addr = s.accept()
             dataTaken = c.recv(1024).decode()
             c.close()
             socketMessages.append(dataTaken)
 
-threading.Thread(target=receiveData, args=('206.87.3.89', 65432)).start()
+threading.Thread(target=receiveData, args=('24.70.205.193', 65432)).start()
 
 class Root(object):
     @cherrypy.expose
@@ -56,10 +57,6 @@ class Root(object):
         #if this isnt the first message, check if the user asked a question
         if questionNum != 1 or subject != "normal":
             userInput = data.get("userInput")
-            try:
-                sendData(userInput, '206.87.3.88', 65432)
-            except:
-                print("Connection does not work.")
             isQuestion = parsingStringFunctions.questionOrStatement(userInput)
             #if the user asked a question, reset
             if(isQuestion == "question"):

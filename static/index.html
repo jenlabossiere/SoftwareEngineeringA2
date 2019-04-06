@@ -80,11 +80,12 @@
             type: "POST",
             url: "listenSocketMessages",
             success: function (data) {
-                if (data != "")
+                if (data !== "") {
                     window.messageHistory.addBotMessage(data)
+                };
                 setTimeout(function () {
                     listenSocketMessages();
-                }, 10000);
+                }, 5000);
             }        
         });
     }
