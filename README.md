@@ -49,13 +49,3 @@ The functionality of the program is divided into four sections:
 - GUI colours changed for a better aesthetic, including the "send" button being changed to "respond". As well as this, when enter is clicked on the keyboard, the message is sent, whereas before the button "send" had to be physically pressed--allows for an easier user experience. Must be run on safari for colours to be seen, unfortunately. (5 marks)
 
 - Code is included to use for sockets, which works when not connected to the UBC server. This has been implemented with another group member, Ethan Godden. (15 marks)
-
-- Database has been extended to allow for a different topic, although I added A LOT mor information, so am hoping it might be worth more than 2 marks (2 marks)
-
-- If the topic is changed, or a question is asked of the Therapist, then measures are taken to put the conversation back on track. (3 marks)
-
-
-
-
-
-
