@@ -14,23 +14,23 @@ subject = "normal"
 questionNum = 1
 socketMessages = []
 
-# def sendData(data, IP, server):
-#     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-#         s.connect((IP, server))
-#         s.sendall(data.encode())
-#         s.close()
+def sendData(data, IP, server):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.connect((IP, server))
+        s.sendall(data.encode())
+        s.close()
 
-# def receiveData(IP, server):
-#     with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
-#         s.bind((IP, server))  ``
-#         s.listen(5)
-#         while True:
-#             c,addr = s.accept()
-#             dataTaken = c.recv(1024).decode()
-#             c.close()
-#             socketMessages.append(dataTaken)
+def receiveData(IP, server):
+    with socket.socket(socket.AF_INET, socket.SOCK_STREAM) as s:
+        s.bind((IP, server)) 
+        s.listen(5)
+        while True:
+            c,addr = s.accept()
+            dataTaken = c.recv(1024).decode()
+            c.close()
+            socketMessages.append(dataTaken)
 
-# threading.Thread(target=receiveData, args=('24.70.205.193', 65432)).start()
+threading.Thread(target=receiveData, args=('24.70.205.193', 65432)).start()
 
 class Root(object):
     @cherrypy.expose
